@@ -5,14 +5,16 @@ import java.util.List;
 
 
 public class DAOUsuario {
-    public Usuario Insertar(int id, String usuario, String clave){
-        String u = "INSERT INTO Usuarios VALUES"
-                + "('"+id+"', '"+usuario+"', '"+clave+"')";
-        if(new Database().Actualizar(u) > 0){
-            return new Usuario(id, usuario, clave);
+
+    public Usuario Insertar(String dni, String paterno, String materno, String nombres, String correo, String clave, String tipo){
+        String q = "INSERT INTO Usuarios VALUES("
+                + "'"+dni+"', '"+paterno+"','"+materno+"', '"+nombres+"', '"+correo+"', '"+clave+"', '"+tipo+"')";
+        if (new Database().Actualizar(q)>0) {
+            return new Usuario(dni, paterno, materno, nombres, correo, clave, tipo);            
         }
         return null;
     }
+    /*
     public int Actualizar(int id, String usuario, String clave){
         String q = "UPDATE Usuarios SET Usuario='"
                 + usuario + "' WHERE Id='"
@@ -43,6 +45,7 @@ public class DAOUsuario {
         String q = "DELETE FROM Usuarios WHERE id='"+id+"'";
         return new Database().Actualizar(q);
     }
+*/
             
     
     
