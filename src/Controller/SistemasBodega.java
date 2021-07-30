@@ -6,6 +6,7 @@ import View.*;
 public class SistemasBodega extends javax.swing.JFrame {
     private ListadoUsuarios listadousuarios;
     private NuevoUsuario nuevousuario;
+    private NuevoCliente nuevocliente;
 
     public SistemasBodega() {
         initComponents();
@@ -13,10 +14,12 @@ public class SistemasBodega extends javax.swing.JFrame {
         
         listadousuarios = new ListadoUsuarios();
         nuevousuario = new NuevoUsuario();
+        nuevocliente = new NuevoCliente();
         
         //Agregamos los frames internos al desktoPane
         desktopPane.add(listadousuarios);
         desktopPane.add(nuevousuario);
+        desktopPane.add(nuevocliente);
     }
 
     @SuppressWarnings("unchecked")
@@ -41,6 +44,7 @@ public class SistemasBodega extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,6 +110,11 @@ public class SistemasBodega extends javax.swing.JFrame {
         menuBar.add(helpMenu);
 
         jMenu1.setText("Usuarios");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
         jMenuItem1.setText("Listado");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -122,6 +131,14 @@ public class SistemasBodega extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("Cliente");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
 
         menuBar.add(jMenu1);
 
@@ -157,6 +174,15 @@ public class SistemasBodega extends javax.swing.JFrame {
         nuevousuario.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        nuevocliente.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
     public static void main(String args[]) {
  
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -180,6 +206,7 @@ public class SistemasBodega extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;

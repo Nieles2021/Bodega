@@ -8,7 +8,7 @@ public class Database {
     private final String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private final String URL = "jdbc:sqlserver://localhost:1433;databaseName=Bodega";
     private final String USER = "sa";
-    private final String PASSWORD = "Nieles2021";
+    private final String PASSWORD = "Nieles.2021";
     
     private Connection conexion;
     
