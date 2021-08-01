@@ -6,22 +6,22 @@ public class Usuario {
     private String paterno;
     private String materno;
     private String nombres;
-    private String correo;
-    private String clave;
     private String tipo;
+    private String correo;
+    private String clave;   
     
 
     public Usuario() {
     }
 
-    public Usuario(String dni, String paterno, String materno, String nombres, String correo, String clave, String tipo) {
+    public Usuario(String dni, String paterno, String materno, String nombres, String tipo, String correo, String clave) {
         this.dni = dni;
         this.paterno = paterno;
         this.materno = materno;
         this.nombres = nombres;
+        this.tipo = tipo;
         this.correo = correo;
         this.clave = clave;
-        this.tipo = tipo;
     }
 
     public String getDni() {
@@ -40,16 +40,16 @@ public class Usuario {
         return nombres;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
     public String getCorreo() {
         return correo;
     }
 
     public String getClave() {
         return clave;
-    }
-
-    public String getTipo() {
-        return tipo;
     }
 
     public void setDni(String dni) {
@@ -68,6 +68,10 @@ public class Usuario {
         this.nombres = nombres;
     }
 
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     public void setCorreo(String correo) {
         this.correo = correo;
     }
@@ -75,13 +79,6 @@ public class Usuario {
     public void setClave(String clave) {
         this.clave = clave;
     }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    
-    
     
     
 }

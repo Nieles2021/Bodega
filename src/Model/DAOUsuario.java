@@ -6,11 +6,11 @@ import java.util.List;
 
 public class DAOUsuario {
 
-    public Usuario Insertar(String dni, String paterno, String materno, String nombres, String correo, String clave, String tipo){
+    public Usuario Insertar(String dni, String paterno, String materno, String nombres, String tipo, String correo, String clave){
         String q = "INSERT INTO Usuarios VALUES("
-                + "'"+dni+"', '"+paterno+"','"+materno+"', '"+nombres+"', '"+correo+"', '"+clave+"', '"+tipo+"')";
+                + "'"+dni+"', '"+paterno+"','"+materno+"', '"+nombres+"', '"+tipo+"', '"+correo+"', '"+clave+"')";
         if (new Database().Actualizar(q)>0) {
-            return new Usuario(dni, paterno, materno, nombres, correo, clave, tipo);            
+            return new Usuario(dni, paterno, materno, nombres, tipo, correo, clave);            
         }
         return null;
     }
